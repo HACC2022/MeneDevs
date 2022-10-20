@@ -3,9 +3,7 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-    if (!req.isAuthenticated()) return res.redirect('/login');
-
-    res.render('index', { title: `Welcome random ${req.user.email.includes('agency') ? 'agency' : 'admin'}` });
+    res.render('index', { accountType: require?.user?.type || 'guest' });
 });
 
 module.exports = router;
