@@ -1,3 +1,5 @@
+// Add functions to button (edit global form)
+
 const express = require('express');
 const router = express.Router();
 
