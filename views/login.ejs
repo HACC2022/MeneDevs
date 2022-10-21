@@ -1,53 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log in</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link rel="stylesheet" href="/stylesheets/login-style.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <!-----Navigation Bar----->
     <section id="nav-bar">
-        <div id="bar">
-            <img id="logo" height="50px" src="/images/logo.jpg" />
-            <div class="content">
-                <h3>Home</h3>
-            </div>
-
-            <div class="content">
-                <h3>Reports</h3>
-            </div>
-
-            <div id="account">
-                <img id="account-logo" src="/images/account-logo.jpg" height="40px" style="padding-top: 20px" />
-                <h3>Guest</h3>
-            </div>
+      <div id="bar">
+        <img id="logo" height="50px" src="/images/logo.jpg" />
+        <div class="content">
+          <h3>Home</h3>
         </div>
+
+        <div class="content">
+          <h3>Reports</h3>
+        </div>
+
+        <div id="account">
+          <img
+            id="account-logo"
+            src="/images/account-logo.jpg"
+            height="40px"
+            style="padding-top: 20px"
+          />
+        </div>
+      </div>
     </section>
 
     <!-----Main Body----->
     <main>
-        <h1>Welcome Back!</h1>
-        <h2>Please log in</h2>
-        <form action="/login" method="post">
-            <input type="text" placeholder="Enter email" name="email" /><br />
-            <input type="password" placeholder="Enter password" name="pass" /><br /><br />
-            <div id="signup-container">
-                <p>
-                    Don't have an account?
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
-                        rel="noopener noreferrer">Contact Dot</a>
-                </p>
-            </div>
+      <h1>Welcome Back!</h1>
+      <h2>Please log in</h2>
+      <form action="/login" method="post">
+        <input type="text" placeholder="Enter email" name="email" /><br />
+        <input
+          type="password"
+          placeholder="Enter password"
+          name="pass"
+        /><br /><br />
+        <div id="signup-container">
+          <p>
+            Don't have an account?
+            <a
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Contact Dot</a
+            >
+          </p>
+        </div>
 
-            <button type="submit">Login</button>
-        </form>
+        <button type="submit">Login</button>
+      </form>
     </main>
-</body>
-
+  </body>
 </html>
