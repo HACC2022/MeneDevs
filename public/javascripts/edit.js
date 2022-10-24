@@ -6,6 +6,7 @@ const create = document.createElement("create");
 var counter = 11; 
 var newInput = document.createElement('input')
 var newHeader = document.createElement('h3')
+var testBool = true;
 
 // Gives functionality to edit button (NEED TO SOMEHOW MAKE IT MORE OBVIOUS THE USER IS ABLE 
 //TO EDIT THE QUESTIONS)
@@ -22,12 +23,16 @@ var newHeader = document.createElement('h3')
 
 //Gives functionality to add button (WORK IN PROGRESS)
 
- add.addEventListener('click', _ =>{
-   //  create.setAttribute("type", "text");
+if(testBool == true){
+add.addEventListener('click', _ =>{
+   //create.setAttribute("type", "text");
    form.appendChild(newHeader);
    newHeader.innerHTML = counter+1;
    form.appendChild(newInput);
    newInput.type = 'text';
-   newInput.name = 'questions[]';
+   //newInput.name = '';
    counter++;
+   console.log("new question created")
  });
+ testBool = false;
+}
