@@ -43,8 +43,9 @@ table {
     align-items: center;
     background-color: white;
     border-radius: 5px;
-    position: relative;
-    width: 25%;
-    left: 37%;
+    position: relative; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 576px;
 }
 
