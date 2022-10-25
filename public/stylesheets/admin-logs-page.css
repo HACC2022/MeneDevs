@@ -41,6 +41,9 @@ table {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    width: 50%;
+    position: relative;
+    left: 25%;
 }
 
 th {
