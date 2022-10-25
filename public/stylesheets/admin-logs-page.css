@@ -41,16 +41,13 @@ table {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    position: relative;
-    left: 25%;
 }
 
 th {
     text-align: left;
 }
 
-table,
+
 th,
 td {
     border: 1px solid #000;
