@@ -23,3 +23,8 @@ button {
     padding: 10px 15px;
     margin: 5px;
 }
+
+button:hover {
+    background-color: #1083ff;
+    color:#ffff;
+}

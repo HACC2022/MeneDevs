@@ -39,6 +39,7 @@ body {
 .content:hover {
     transition-duration: 0.4s;
     background-color: rgb(25, 125, 255);
+    cursor: pointer;
 }
 
 #account {
