@@ -7,27 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log in</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/login-style.css" />
 </head>
 
 <body>
     <!-----Navigation Bar----->
-    <section id="navBar">
+    <section id="nav-bar" class="no-touch">
         <div id="bar">
             <img id="hidotLogo" height="50px" src="/images/logo.jpg" />
-            <div class="content">
-                <h3>Home</h3>
-            </div>
-
-            <div class="content">
-                <h3>Reports</h3>
-            </div>
-
-            <div id="account">
-                <img id="accountLogo" src="/images/account-logo.jpg" height="40px" style="padding-top: 20px" />
-            </div>
         </div>
     </section>
 
+    <!-----Main Body----->
     <main>
         <h1>Welcome Back!</h1>
         <h2>Please log in</h2>
@@ -37,13 +28,19 @@
             <div id="signup-container">
                 <p>
                     Don't have an account?
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">Contact Dot</a>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
+                        rel="noopener noreferrer">Contact TOD</a>
                 </p>
             </div>
 
             <button type="submit">Login</button>
         </form>
     </main>
+
+    <script>
+        const accountType = '<%- accountType %>';
+    </script>
+    <script src="/javascripts/nav-bar.js"></script>
 </body>
 
 </html>

@@ -14,15 +14,16 @@ module.exports = class UserDB extends DB {
 
     /**
      * Looks for an account with the same email and password given
+     * 
      * @param {String} email The email of the acc
      * @param {String} password The password of the acc
-     * @returns {Promise} promised boolean
+     * @returns Promised boolean
      */
     async findAccount(email, password) {
         if (typeof email != 'string') throw new Error('Expected email to be a string');
         if (typeof password != 'string') throw new Error('Expected password to be a string');
 
-        return this.find({
+        return await this.find({
             TableName: this.TABLE_NAME,
             Key: {
                 [this.PARTITION_KEY]: { S: email },
@@ -33,6 +34,7 @@ module.exports = class UserDB extends DB {
 
     /**
      * Creates a new account with the given credentials
+     * 
      * @param {String} email The acc email
      * @param {String} password The acc password
      * @param {String} type States whether this is an agency or admin acc
@@ -54,6 +56,7 @@ module.exports = class UserDB extends DB {
 
     /**
      * Removes account from the database
+     * 
      * @param {String} email The acc email
      * @param {String} password The acc password
      * @param {?String} type (optional) States whether this is an agency or admin acc
