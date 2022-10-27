@@ -25,7 +25,7 @@
         <p>1. Name of Agency <span style="color:red">*</span></p>
         <input id="agency" type="text" placeholder="Name">
         <p>2. Phone Number <span style="color:red">*</span></p>
-        <input id="contact" type="tel" placeholder="Phone Number">
+        <input id="contact" type="tel" placeholder="Phone Number" maxlength="14">
         <p>3. Email Address <span style="color:red">*</span></p>
         <input id="email" type="text" placeholder="Email Address">
         <p>4. Name of TOD Station Area <span style="color:red">*</span></p>
@@ -46,7 +46,7 @@
             <label id="planningBtn" for="planning">Planning </label>
         </div>
         <p>10. Current Project Budget</p>
-        <span class="input">$<input id="projectBudget" type="number" placeholder="Budget for current fiscal year"></span>
+        <span class="input"><input id="projectBudget" type="text" placeholder="Budget for current fiscal year"></span>
         <p>11. Project Status</p>
         <textarea id="status" name="text" rows="2" cols="50" placeholder="Type project narrative here"></textarea>
         <br>
@@ -65,6 +65,7 @@
     </script>
     <script src="/javascripts/nav-bar.js"></script>
     <script src="/javascripts/agency.js"></script>
+    <script src="/javascripts/phone.js"></script>
 </body>
 
 </html>

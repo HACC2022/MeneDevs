@@ -1,5 +1,6 @@
 if (process.env.NODE_ENV == 'development') require('dotenv').config();
 else require('./utils/no-idle')('mene-devs');
+require('dotenv').config();
 
 const createError = require('http-errors');
 const express = require('express');
