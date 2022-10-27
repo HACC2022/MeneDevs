@@ -1,3 +1,24 @@
+#loginContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    border: 10px #555;
+}
+#loginH1{
+    margin-bottom: 1%;
+}
+#loginH2 {
+    margin-top: 1%;
+}
+#nameInput {
+    width: 50%;
+}
+
+#passInput {
+    width: 50%;
+}
+
 #siHeadDiv {
     display: flex;
     flex-direction: column;

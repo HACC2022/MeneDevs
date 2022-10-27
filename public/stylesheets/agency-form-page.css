@@ -49,22 +49,15 @@ input,
 #projectBudget,
 #status {
     padding: 12px 20px;
-    width: 10%;
+    width: 20%;
     border-radius: 10px;
     outline: none;
-    transition: width 0.4s ease-in-out;
     /*May seem redundant to add this, but for some reason, font in placeholder #status changes back to default times new roman. It is what it is*/
     font-family: "source-sans";
     src: url("/fonts/source-sans-pro-regular.ttf") format("truetype");
 }
 
-input:focus,
-#projectBudget:focus,
-#status:focus {
-    transition-duration: 0.3s;
-    border: 3px solid #3296ff;
-    width: 25%;
-}
+
 
 button {
     border: none;
