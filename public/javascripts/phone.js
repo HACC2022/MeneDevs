@@ -37,23 +37,22 @@ projectBudget.onchange = function(){ // formats number with commas
     while (costWithoutComma.indexOf(",") != -1){
         costWithoutComma = costWithoutComma.replace(",", "");
     }
-    console.log("without commas: " + (costWithoutComma));
-    console.log("length is: " + (costWithoutComma.length-1));
+   
     if ((costWithoutComma.length-1)/3 > 1){
-        console.log("big");
+
         let numAfterComma = (costWithoutComma.substring(1).length) % 3;
-        console.log(numAfterComma);
+     
         let numberOfCommas = (costWithoutComma.substring(1).length-numAfterComma)/3;
         var afterComma = costWithoutComma.substring(1,numAfterComma+1);
         var numberBank = costWithoutComma.substring(numAfterComma + 1);
-        console.log(numberBank.length/6);
+       
         if (numberBank.length/6 >= 1 || numberBank.length < 4){
             numberOfCommas--;
         }
-        console.log("number of commas: " + numberOfCommas);
+      
         for (let i = 0; i < numberOfCommas; i++){
            numberBank = numberBank.slice(0,3 * (i+1) + i) + "," + numberBank.slice(3 * (i+1) + i);
-           console.log("pass number " + (i+1) + ": " + numberBank);
+          
         }
         if (numAfterComma != 0){
             numberBank = afterComma + "," + numberBank;
