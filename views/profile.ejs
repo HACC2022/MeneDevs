@@ -4,20 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <link rel="stylesheet" href="/stylesheets/profile.css">
-    <link rel="stylesheet" href="/stylesheets/style.css">
     <title>Document</title>
 </head>
-
+<!-- TO DO: PLEASE FIX PROFILE TYPE BECAUSE I WAS ON THE AGENCY FORM PAGE, CLICKED ON THE ACCOUNT AND IT SAY MY ACCOUNT TYPE WAS ADMIN. PLS FIX - JACOB-->
 <body>
-    <section id="nav-bar">
+    <section id="nav-bar" class="no-touch">
         <div id="bar">
             <img id="hidotLogo" height="50px" src="/images/logo.jpg" />
         </div>
     </section>
+    <div style="margin-top: 60px;"></div>
 
     <h1 id="profileHeader">Welcome</h1>
+
+
+
     <p>Profile Type: <%= accountType %>
     </p>
 
@@ -25,6 +29,7 @@
         const accountType = '<%- accountType %>';
     </script>
     <script src="/javascripts/nav-bar.js"></script>
+    <script src="/javascripts/admin.js"></script>
 </body>
 
 </html>
