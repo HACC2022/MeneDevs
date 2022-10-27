@@ -85,6 +85,13 @@ body {
     cursor: pointer;
 }
 
+#divider {
+    position: relative;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: -20px;
+}
+
 #divider
 {
     position: relative;
