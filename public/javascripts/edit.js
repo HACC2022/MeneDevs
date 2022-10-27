@@ -4,35 +4,29 @@ const add = document.getElementById('new-question');
 const form = document.getElementsByClassName('originalFormQs')[0];
 const create = document.createElement("create");
 var counter = 11; 
-var newInput = document.createElement('input')
-var newHeader = document.createElement('h3')
-var testBool = true;
-
+var maxQuestions = 100;
+const newHeader = document.createElement('h3');
+const editPopUp = document.getElementById('popUp');
 // Gives functionality to edit button (NEED TO SOMEHOW MAKE IT MORE OBVIOUS THE USER IS ABLE 
 //TO EDIT THE QUESTIONS)
  edit.addEventListener('click', _ => {
     form.contentEditable = true;
     console.log("edit");
+    editPopUp.innerHTML = "The form is now editable, press on the questions to edit!";
  });
 
 // Gives functionality to save button
  save.addEventListener('click', _ =>{
     form.contentEditable = false;
     console.log("save");
+    editPopUp.innerHTML = "New form was saved!";
  });
-
 //Gives functionality to add button (WORK IN PROGRESS)
-
-if(testBool == true){
 add.addEventListener('click', _ =>{
-   //create.setAttribute("type", "text");
-   form.appendChild(newHeader);
-   newHeader.innerHTML = counter+1;
-   form.appendChild(newInput);
-   newInput.type = 'text';
-   //newInput.name = '';
-   counter++;
-   console.log("new question created")
+   if (counter < maxQuestions){
+      var tempHead = document.createElement('h3');
+      form.appendChild(tempHead);
+      tempHead.innerHTML = counter + 1 + ".";
+      counter++;
+   }
  });
- testBool = false;
-}
