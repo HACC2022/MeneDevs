@@ -1,5 +1,14 @@
 const addReport = document.getElementById('add-button');
 const submitReport = document.getElementById('submitReport');
+const openReport = document.getElementById('open-button-7');
+
+// View Page
+if(openReport)
+{
+    linkTo(openReport, '/agency/view');
+
+
+}
 
 // Reports Page
 if (addReport) {

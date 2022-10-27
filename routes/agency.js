@@ -23,6 +23,10 @@ router.get('/new', checkAuthed, (req, res, next) => {
     res.render('agency-form', { accountType: 'agency' });
 });
 
+router.get('/view', checkAuthed, (req, res, next) => {
+    res.render('agency-open', { accountType: 'agency'});
+})
+
 /* POST create report */
 router.post('/new', checkAuthed, async (req, res, next) => {
     if (!req.body.agency) return res.status(502).json("missing 'agency' from body");

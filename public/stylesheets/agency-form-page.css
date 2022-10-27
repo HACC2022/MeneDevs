@@ -72,3 +72,8 @@ button {
     padding: 10px 15px;
     margin: 5px;
 }
+
+button:hover
+{
+    background-color: #246dbb;
+}
