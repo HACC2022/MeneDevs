@@ -6,16 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agent Home</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <link rel="stylesheet" href="/stylesheets/agent-home-style.css" />
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+    <link rel="stylesheet" href="/stylesheets/agency/view-reports.css" />
 </head>
 
 <body>
     <!-----Navigation Bar----->
     <section id="nav-bar" class="no-touch">
         <div id="bar">
-            <img id="hidotLogo" height="50px" src="/images/logo.jpg" />
+            <img id="hidotLogo" height="40px" src="/images/logo.jpg" />
         </div>
+        <h1 id="divider" style="top: -42px;"></h1>
     </section>
     <div style="margin-top: 60px;"></div>
 
@@ -26,6 +27,7 @@
                 <!-- Ask how to make an if statement for adding rows and columns. -->
                 <thead>
                     <tr class="no-touch">
+                        <th></th>
                         <th>Agency</th>
                         <th>Project Name</th>
                         <th>Date Created</th>
@@ -36,8 +38,7 @@
                     <tr id="project1">
                         <td>
                             <div class="dropdown">
-                                <!--<button onclick="myFunction()" class="dropbtn"></button>-->
-                                <input onclick="myFunction()" class="dropbtn" type="image" value="1" src="/images/three-dots.png" />
+                                <input class="dropbtn no-touch" type="image" value="1" src="/images/three-dots.png" />
                                 <div id="myDropdown1" class="dropdown-content">
                                     <a href="#">Rename</a>
                                     <a href="#">Remove</a>
@@ -55,8 +56,7 @@
                     <tr id="project2">
                         <td>
                             <div class="dropdown">
-                                <!--<button onclick="myFunction()" class="dropbtn"></button>-->
-                                <input onclick="myFunction()" class="dropbtn" type="image" value="2" src="/images/three-dots.png" />
+                                <input class="dropbtn no-touch" type="image" value="2" src="/images/three-dots.png" />
                                 <div id="myDropdown2" class="dropdown-content">
                                     <a href="#">Rename</a>
                                     <a href="#">Remove</a>
@@ -74,8 +74,7 @@
                     <tr id="project3">
                         <td>
                             <div class="dropdown">
-                                <!--<button onclick="myFunction()" class="dropbtn"></button>-->
-                                <input onclick="myFunction()" class="dropbtn" type="image" value="3" src="/images/three-dots.png" />
+                                <input class="dropbtn no-touch" type="image" value="3" src="/images/three-dots.png" />
                                 <div id="myDropdown3" class="dropdown-content">
                                     <a href="#">Rename</a>
                                     <a href="#">Remove</a>
@@ -93,8 +92,7 @@
                     <tr id="project4">
                         <td>
                             <div class="dropdown">
-                                <!--<button onclick="myFunction()" class="dropbtn"></button>-->
-                                <input onclick="myFunction()" class="dropbtn" type="image" value="4" src="/images/three-dots.png" />
+                                <input class="dropbtn no-touch" type="image" value="4" src="/images/three-dots.png" />
                                 <div id="myDropdown4" class="dropdown-content">
                                     <a href="#">Rename</a>
                                     <a href="#">Remove</a>
@@ -112,8 +110,7 @@
                     <tr id="project5">
                         <td>
                             <div class="dropdown">
-                                <!--<button onclick="myFunction()" class="dropbtn"></button>-->
-                                <input onclick="myFunction()" class="dropbtn" type="image" value="5" src="/images/three-dots.png" />
+                                <input class="dropbtn no-touch" type="image" value="5" src="/images/three-dots.png" />
                                 <div id="myDropdown5" class="dropdown-content">
                                     <a href="#">Rename</a>
                                     <a href="#">Remove</a>
@@ -129,6 +126,16 @@
                         </td>
                     </tr>
                     <tr id="project6">
+                        <td>
+                            <div class="dropdown">
+                                <input class="dropbtn no-touch" type="image" value="6" src="/images/three-dots.png" />
+                                <div id="myDropdown6" class="dropdown-content">
+                                    <a href="#">Rename</a>
+                                    <a href="#">Remove</a>
+                                    <a href="#">Open in new tab</a>
+                                </div>
+                            </div>
+                        </td>
                         <td>Department of Water</td>
                         <td>Kakaako Plumbing</td>
                         <td>10/18/22</td>
@@ -137,6 +144,16 @@
                         </td>
                     </tr>
                     <tr id="project7">
+                        <td>
+                            <div class="dropdown">
+                                <input class="dropbtn no-touch" type="image" value="7" src="/images/three-dots.png" />
+                                <div id="myDropdown7" class="dropdown-content" style="position: relative;">
+                                    <a href="#">Rename</a>
+                                    <a href="#">Remove</a>
+                                    <a href="#">Open in new tab</a>
+                                </div>
+                            </div>
+                        </td>
                         <td>Department of Water</td>
                         <td>Kakaako Plumbing</td>
                         <td>10/18/22</td>
@@ -155,4 +172,6 @@
         const accountType = '<%- accountType %>';
     </script>
     <script src="/javascripts/nav-bar.js"></script>
+    <script src="/javascripts/sort-table.js"></script>
     <script src="/javascripts/agency.js"></script>
+</body>
