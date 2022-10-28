@@ -33,9 +33,7 @@ if(editReport)
     };
 
     editReport.addEventListener('click', async _ => {
-        // reset inputs
-        inputs = {};
-
+        
         for (const [id, required] of Object.entries(inputIds)) {
             const input = id == 'phase' ? document.querySelector('input[name="phase"]:checked') : document.getElementById(id);
 

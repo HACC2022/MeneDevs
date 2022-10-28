@@ -14,3 +14,11 @@
     border-style: none;
     border-radius: 6px;
 }
+
+main
+{
+    margin-left: 31%;
+    margin-top: 5%;
+    background-color: white;
+    width: 35%;
+}
