@@ -18,6 +18,11 @@ router.get('/', checkAuthed, async (req, res, next) => {
     res.render('agency/view-reports', { accountType: 'agency', allReports });
 });
 
+/* GET open report page*/
+router.get('/view', checkAuthed, (req, res, next) => {
+    res.render('agency/open-report', { accountType: 'agency'});
+});
+
 /* GET specific report page */
 router.get('/:reportId', checkAuthed, (req, res, next) => {
     const reportId = req.params.reportId;
@@ -31,9 +36,7 @@ router.get('/:reportId', checkAuthed, (req, res, next) => {
     res.render('agency/report', { accountType: 'agency' });
 });
 
-router.get('/view', checkAuthed, (req, res, next) => {
-    res.render('agency-open', { accountType: 'agency'});
-})
+
 
 /* POST create report */
 router.post('/new', checkAuthed, async (req, res, next) => {
