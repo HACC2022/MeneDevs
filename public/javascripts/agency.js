@@ -103,3 +103,26 @@ function myFunction() {
       }
     }
   }
+
+async function getData(){
+    const response = await fetch('/api');
+    const data = await response.json();
+    for (item of data){
+        const root = getElementById("no-touch");
+        const agency = document.createElement('td');
+        const project = document.createElement('td');
+        const created = document.createElement('td');
+        const opened = document.createElement('td');
+        const openedString = new Date(item.timestamp).toLocaleString();
+
+        agency.textContent = '${item.agency}';
+        project.textContent = '${item.project}';
+        created.textContent = '${item.created}';
+        opened.textContent = openedString;
+
+        root.append(agency, project, created, opened)
+        document.body.append(root);
+    }
+}
+
+getData();
