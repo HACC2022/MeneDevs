@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "source-sans";
+    src: url("/fonts/source-sans-pro-regular.ttf") format("truetype");
+}
+
 body {
     margin-bottom: 50px;
 }
@@ -37,19 +42,20 @@ body {
     outline: none;
     transition: width 0.4s ease-in-out;
 }
+
 #ddPlaceHolder {
     color: grey;
 }
+
 select {
-    /*May seem redundant to add this, but for some reason, I gotta. It is what it is*/
-    font-family: "source-sans";
-    src: url("/fonts/source-sans-pro-regular.ttf") format("truetype");
     width: 20%;
     height: 20%;
 }
+
 option:first {
     color: #999;
 }
+
 input,
 #projectBudget,
 #status {
@@ -57,12 +63,7 @@ input,
     width: 20%;
     border-radius: 10px;
     outline: none;
-    /*May seem redundant to add this, but for some reason, font in placeholder #status changes back to default times new roman. It is what it is*/
-    font-family: "source-sans";
-    src: url("/fonts/source-sans-pro-regular.ttf") format("truetype");
 }
-
-
 
 button {
     border: none;
