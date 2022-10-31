@@ -16,6 +16,13 @@ body {
     text-align: center;
 }
 
+.row-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .no-touch {
     -webkit-touch-callout: none;
     -webkit-user-select: none;

@@ -35,7 +35,10 @@ if (agencyFormQuestions) {
     }
     agencyFormQuestions.innerHTML += `
         <br><br><br>
-        <button id="submitReport">Submit</button>
+        <div id="row-container">
+            <button id="submitReport" style="background: #27ae60;">Submit</button>
+            <button id="deleteReport" style="display: none; background: #e74c3c;">Delete</button>
+        </div>
     `;
 
     const reverse = (str) => str.split('').reverse().join('');
@@ -60,10 +63,12 @@ if (agencyFormQuestions) {
     // Change everything based on whether this is a new or old report
     const url = new URL(window.location.href);
     const submitReport = document.getElementById('submitReport');
+    const deleteReport = document.getElementById('deleteReport');
 
     if (!url.searchParams.get('create')) {
         document.getElementById('agencyFormPageHeader').textContent = 'Edit Your Report';
-        submitReport.textContent = 'Save Changes';
+        submitReport.textContent = 'Save';
+        deleteReport.style.display = null;
 
         for (const [key, value] of Object.entries(report)) {
             const element = document.getElementById(key);
@@ -74,8 +79,32 @@ if (agencyFormQuestions) {
     // https://stackoverflow.com/questions/201323/how-can-i-validate-an-email-address-using-a-regular-expression
     const emailRegex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
 
+    const handlePostResponse = async (response) => {
+        try {
+            response = await response.json();
+
+            if (response == 'success') window.open('/agency', '_self');
+            else alert('Something went wrong!');
+        } catch (e) {
+            console.error(e);
+            alert('Something went wrong!');
+        }
+    };
+
+    const postChanges = async (obj) => {
+        const response = await fetch(window.location.origin + window.location.pathname, {
+            method: 'POST',
+            headers: {
+                ['Content-Type']: 'application/json',
+            },
+            body: JSON.stringify(obj),
+        });
+
+        handlePostResponse(response);
+    };
+
     submitReport.addEventListener('click', async _ => {
-        // check if inputs are valid and save
+        // first check if inputs are valid
         for (const input of document.querySelectorAll('input')) {
             const qType = input.classList[0];
 
@@ -91,20 +120,10 @@ if (agencyFormQuestions) {
             report[input.id] = input.value;
         }
 
-        try {
-            const response = await (await fetch(window.location.origin + window.location.pathname, {
-                method: 'POST',
-                headers: {
-                    ['Content-Type']: 'application/json',
-                },
-                body: JSON.stringify({ create: true, report: report }),
-            })).json();
+        postChanges({ create: true, report: report });
+    });
 
-            if (response == 'success') window.open('/agency', '_self');
-            else alert('Something went wrong!');
-        } catch (e) {
-            console.error(e);
-            alert('Something went wrong!');
-        }
+    deleteReport.addEventListener('click', _ => {
+        if (confirm('Are you sure you want to delete this report?')) postChanges({ delete: true, report: report });
     });
 }

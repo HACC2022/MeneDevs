@@ -40,10 +40,11 @@ router.get('/report', checkAuthed, async (req, res, next) => {
 
 /* POST create report */
 router.post('/report', checkAuthed, async (req, res, next) => {
-    const { create, report } = req.body;
+    const { create, delete: del, report } = req.body;
     if (!report) return res.status(502).json("missing 'report' from body");
 
     if (create) await reportsDB.createReport(req?.user?.email, report);
+    else if (del) await reportsDB.deleteReport(report.id, report.email);
     else await reportsDB.updateReport(report.id, report.email, report);
 
     res.json('success');
