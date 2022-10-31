@@ -7,8 +7,7 @@ var counter = 11;
 var maxQuestions = 100;
 const newHeader = document.createElement('h3');
 const editPopUp = document.getElementById('popUp');
-// Gives functionality to edit button (NEED TO SOMEHOW MAKE IT MORE OBVIOUS THE USER IS ABLE 
-//TO EDIT THE QUESTIONS)
+// Gives functionality to edit button
  edit.addEventListener('click', _ => {
     form.contentEditable = true;
     console.log("edit");
@@ -21,7 +20,7 @@ const editPopUp = document.getElementById('popUp');
     console.log("save");
     editPopUp.innerHTML = "New form was saved!";
  });
-//Gives functionality to add button (WORK IN PROGRESS)
+//Gives functionality to add button
 add.addEventListener('click', _ =>{
    if (counter < maxQuestions){
       var tempHead = document.createElement('h3');
