@@ -23,10 +23,10 @@ router.get('/', checkAuthed, async (req, res, next) => {
 
 /* GET specific report page */
 router.get('/report', checkAuthed, async (req, res, next) => {
-    const { id } = req.query;
-    if (!id) return next();
+    const { id, email } = req.query;
+    if (!id || !email) return next();
 
-    const report = await reportsDB.getReport(id, req?.user?.email);
+    const report = await reportsDB.getReport(id, email);
     if (Object.keys(report).length == 0) return next();
 
     const questions = await questionsDB.getQuestions();

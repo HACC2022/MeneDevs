@@ -11,7 +11,7 @@ function initTable(arr) {
     // setup the button callback for opening each report
     openReport = (id) => {
         const obj = findObj(arr, id);
-        const params = new URLSearchParams({ id: obj.id });
+        const params = new URLSearchParams({ id: obj.id, email: obj.email });
         return window.open(`/${accountType}/report?${params}`, '_self');
     };
 
@@ -72,11 +72,13 @@ function populateTable(arr) {
     for (const obj of arr) {
         let info = '';
 
-        for (const [question, answer] of Object.entries(obj)) {
-            if (question == 'id') {
-                info += `<td>${(new Date(parseInt(answer))).toLocaleDateString()}</td>`;
-            } else {
-                info += `<td>${answer}</td>`;
+        for (const tableHead of document.querySelectorAll('th')) {
+            if (tableHead.innerHTML.length > 0) {
+                if (tableHead.innerHTML == 'Date Created') {
+                    info += `<td>${(new Date(parseInt(obj[tableHead.innerHTML]))).toLocaleDateString()}</td>`;
+                } else {
+                    info += `<td>${obj[tableHead.innerHTML] || ''}</td>`;
+                }
             }
         }
         headerTable.innerHTML += `<th></th>`;
