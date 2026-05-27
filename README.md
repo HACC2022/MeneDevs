@@ -118,4 +118,4 @@ This solution is designed for the **Hawaii Department of Transportation (HIDOT)*
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](file:///d:/Documents/VS%20Files/MeneDevs/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
